@@ -19,7 +19,7 @@ app.config(function($routeProvider,$httpProvider) {
         controller: 'NewBrewController'
       })
       .when('/authenticate/:token/',{
-        templateUrl:'/partials/home.html',
+        templateUrl:'/partials/auth.html',
         controller: 'authController'
       })
       .otherwise({redirectTo: "/login"})
@@ -35,7 +35,7 @@ app.config(function($routeProvider,$httpProvider) {
              },
              'responseError': function (response) {
                  if (response.status === 401 || response.status === 403) {
-                     $location.path('/');
+                     $location.path('/login');
                  }
                  return $q.reject(response);
              }

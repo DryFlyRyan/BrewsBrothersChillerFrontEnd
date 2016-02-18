@@ -59,6 +59,17 @@ body:before {
 
 /* Card and Container Styling */
 
+.login-topfold {
+  height: 100vh;
+  width: 100vw;
+  @include flexRowCenter;
+}
+
+.login-window {
+  height: 600px;
+  background: rgba(256,250,256,.8);
+}
+
 .brews-container {
   @include flexColCenter;
 }
@@ -66,7 +77,6 @@ body:before {
 
 .beer-glass-container {
   @include flexColCenter;
-  // border: 1px solid black;
 }
 
 .batch-card {
@@ -105,13 +115,12 @@ body:before {
 
 .buttons-container {
   @include flexColSpread;
-  border: 1px solid black;
   height: 200px;
 }
 
 /* Element Styling */
-.background {
-  background-image: url('http://il7.picdn.net/shutterstock/videos/2858305/thumb/1.jpg');
+.login-background {
+  background-image: url('http://bbrew-stage.s3.amazonaws.com/2015/03/20/16/06/29/583/bw.jpg');
   background-size: cover;
   background-color: black;
   height:100vh;
@@ -161,10 +170,11 @@ body:before {
 }
 
 .glass-svg {
-  fill: green;
-  height: 150px;
+  fill: #FBB123;
+  height: 200px;
   display: block;
   border: none;
+  margin-top: 25px;
 }
 
 .media-left > a > img {
@@ -220,35 +230,55 @@ body:before {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94c4fe', endColorstr='#d3f6fe',GradientType=0 );
 }
 
-.switch-box {
-  @include flexRowLeft;
-  width: 80px;
-  height: 40px;
-  border: 3px solid rgba(90,90,90,1);
-  border-radius: 5px;
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
-
-.switch-box-off {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
-background: rgba(169, 3, 41, 1); /* Old browsers */
-background: -moz-linear-gradient(left,  rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  rgba(169, 3, 41, 1) 0%,rgba(143, 2, 34, 1) 44%,rgba(109, 0, 25, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  rgba(169, 3, 41, 1) 0%,rgba(143, 2, 34, 1) 44%,rgba(109, 0, 25, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(169, 3, 41, 1)', endColorstr='rgba(109, 0, 25, 1)',GradientType=1 ); /* IE6-9 */
-
+.onoffswitch-checkbox {
+    display: none;
 }
-
-.switch-box-on {
-
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
 }
-
-.switch {
-  margin: 0 3px;
-  height: 30px;
-  width: 30px;
-  background: rgba(90,90,90,.9);
-  border: 2px solid rgba(30,30,30,1);
-  border-radius: 50%;
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 6px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 2px;
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 50%;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
 }
 
 /*Trying to get some hover effects going, probs going to use NG instead*/

@@ -1,17 +1,21 @@
-<div class="background">
-  <h1 class="login-h1">{{place}}</h1>
-  <a href="#/home" class="btn facebook">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-facebook-square fa-stack-1x"></i>
-    </span>  Login
-  </a>
-  <a href="#/home" class="btn google" ng-click="googleauth()">
-    <span class="fa-stack fa-lg">
-      <i class="fa fa-google-plus-square fa-stack-1x"></i>
-    </span>  Login
-  </a>
-  <div class="about-foot">
-    <a ng-click="toAbout()"><h1><span class="glyphicon glyphicon-chevron-down"></span>  About  <span class="glyphicon glyphicon-chevron-down"></span></h1></a>
+<div class="login-background">
+  <div class="login-topfold">
+    <div class="login-window col-md-6">
+      <h1 class="login-h1">{{place}}</h1>
+      <a href="#/home" class="btn facebook">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-facebook-square fa-stack-1x"></i>
+        </span>  Login
+      </a>
+      <a href="#/home" class="btn google" ng-click="googleauth()">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-google-plus-square fa-stack-1x"></i>
+        </span>  Login
+      </a>
+      <div class="about-foot">
+        <a ng-click="toAbout()"><h1><span class="glyphicon glyphicon-chevron-down"></span>  About  <span class="glyphicon glyphicon-chevron-down"></span></h1></a>
+      </div>
+    </div>
   </div>
 </div>
 <div id="about" class="about">
